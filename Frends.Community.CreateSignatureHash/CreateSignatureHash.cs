@@ -7,55 +7,54 @@ using System.Text;
 namespace Frends.Community.CreateSignatureHash
 {
     /// <summary>
-    /// Execute process
+    /// Input
     /// </summary>
-    public class CreateSignature
+    public class Input
     {
         /// <summary>
-        /// 
+        /// Hashed data to sign
         /// </summary>
-        public class Input
-        {
-            /// <summary>
-            /// Hashed data to sign
-            /// </summary>
-            public string HashedData { get; set; }
-            /// <summary>
-            /// RSA/CPS as xml string
-            /// </summary>
-            [PasswordPropertyText(true)]
-            public string PrivateKey { get; set; }
-            /// <summary>
-            /// Used hash
-            /// </summary>
-            [DefaultValue(Function.MD5)]
-            public Function HashFunction { get; set; }
-        }
-
+        public string HashedData { get; set; }
         /// <summary>
-        /// Enum for choosing HashAlgorithm type
+        /// RSA/CPS as xml string
         /// </summary>
+        [PasswordPropertyText(true)]
+        public string PrivateKey { get; set; }
+        /// <summary>
+        /// Used hash
+        /// </summary>
+        [DefaultValue(Function.MD5)]
+        public Function HashFunction { get; set; }
+    }
+
+    /// <summary>
+    /// Enum for choosing HashAlgorithm type
+    /// </summary>
 #pragma warning disable
-        public enum Function { MD5, RIPEMD160, SHA1, SHA256, SHA384, SHA512 }
+    public enum Function { MD5, SHA1, SHA256, SHA384, SHA512 }
 #pragma warning restore
 
+    /// <summary>
+    /// Return object
+    /// </summary>
+    public class Output
+    {
         /// <summary>
-        /// Return object
+        /// RSA signature
         /// </summary>
-        public class Output
-        {
-            /// <summary>
-            /// RSA signature
-            /// </summary>
-            public string Hash { get; set; }
-        }
-
+        public string Hash { get; set; }
+    }
+    /// <summary>
+    /// Execute process
+    /// </summary>
+    public class CreateSignatureHash
+    {
         /// <summary>
         /// Calculates signature hash from hashed data and private key.
         /// </summary>
         /// <param name="input"></param>
         /// <returns>Object {string Hash}</returns>
-        public static Output CreateSignatureHash(Input input)
+        public static Output CreateSignatureHashTask(Input input)
         {
             byte[] signatureHash;
             using (var rsa = new RSACryptoServiceProvider())
@@ -77,7 +76,7 @@ namespace Frends.Community.CreateSignatureHash
 
             var sBuilder = new StringBuilder();
             signatureHash.ToList().ForEach(b => sBuilder.Append(b.ToString("x2")));
-            
+
             return new Output { Hash = sBuilder.ToString() };
         }
 

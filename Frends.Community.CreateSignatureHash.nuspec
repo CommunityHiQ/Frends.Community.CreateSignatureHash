@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Frends.Community.CreateSignatureHash</id>
-    <version>1.0.0</version>
+    <version>0.0.2</version>
     <title>Frends.Community.CreateSignatureHash</title>
     <authors>HiQ Finland</authors>
     <owners />
@@ -17,6 +17,6 @@
   </metadata>
   <files>
     <file src="Frends.Community.CreateSignatureHash\bin\Release\Frends.Community.CreateSignatureHash.dll" target="lib\net452\Frends.Community.CreateSignatureHash.dll" />
-    <file src="Frends.Community.CreateSignatureHash\bin\Release\Frends.Community.CreateSignatureHash.XML" target="lib\net452\Frends.Community.CreateSignatureHash.XML" />
+    <file src="Frends.Community.CreateSignatureHash\bin\Release\Frends.Community.CreateSignatureHash.xml" target="lib\net452\Frends.Community.CreateSignatureHash.xml" />
   </files>
 </package>
