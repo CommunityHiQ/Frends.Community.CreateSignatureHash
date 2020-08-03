@@ -31,8 +31,8 @@ FRENDS Task to create signature hash from hashed data. Supports MD5, SHA1, SHA 2
 
 ### Output
 
-| Property      | Type     | Description                      |
-|---------------|----------|----------------------------------|
+| Property      | Type     | Description                     |
+|---------------|----------|---------------------------------|
 | Hash        | string   | Signature hash |
 
 Usage:
