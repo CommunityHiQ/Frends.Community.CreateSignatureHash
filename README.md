@@ -1,27 +1,25 @@
-**[Table of Contents](http://tableofcontent.eu)**
-- [Frends.Community.CreateSignatureHash](#frendscommunitycreatesignaturehash)
-  - [Contributing](#contributing)
-  - [Documentation](#documentation)
-    - [Input](#input)
-    - [Output](#output)
-  - [License](#license)
-
-
 # Frends.Community.CreateSignatureHash
+
 FRENDS Task to create signature hash from hashed data. Supports MD5, SHA1, SHA 256, SHA 384 and SHA 512 hash algorithms.
 
-## Contributing
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+[![Actions Status](https://github.com/CommunityHiQ/Frends.Community.CreateSignatureHash/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/CommunityHiQ/Frends.Community.CreateSignatureHash/actions) ![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.CreateSignatureHash) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-1. Fork the repo on GitHub
-2. Clone the project to your own machine
-3. Commit changes to your own branch
-4. Push your work back up to your fork
-5. Submit a Pull request so that we can review your changes
+- [Installing](#installing)
+- [Tasks](#tasks)
+     - [CreateSignatureHash](#CreateSignatureHash)
+- [Building](#building)
+- [Contributing](#contributing)
+- [Change Log](#change-log)
 
-NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+# Installing
 
-## Documentation
+You can install the task via FRENDS UI Task View or you can find the NuGet package from the following NuGet feed
+https://www.myget.org/F/frends-community/api/v3/index.json and in Gallery view in MyGet https://www.myget.org/feed/frends-community/package/nuget/Frends.Community.CreateSignatureHash
+
+# Tasks
+
+## CreateSignatureHash
+FRENDS Task to create signature hash from hashed data. Supports MD5, SHA1, SHA 256, SHA 384 and SHA 512 hash algorithms.
 
 ### Input
 
@@ -33,10 +31,47 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 ### Output
 
-| Property      | Type     | Description                      |
-|---------------|----------|----------------------------------|
+| Property      | Type     | Description                     |
+|---------------|----------|---------------------------------|
 | Hash        | string   | Signature hash |
 
-## License
+Usage:
+To fetch result use syntax:
 
-This project is licensed under the MIT License - see the LICENSE file for details
+`#result.Hash`
+
+# Building
+
+Clone a copy of the repo
+
+`git clone https://github.com/CommunityHiQ/Frends.Community.CreateSignatureHash.git`
+
+Rebuild the project
+
+`dotnet build`
+
+Run Tests
+
+`dotnet test`
+
+Create a NuGet package
+
+`dotnet pack --configuration Release`
+
+# Contributing
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request so that we can review your changes
+
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
+# Change Log
+
+| Version | Changes |
+| ------- | ------- |
+| 1.0.0   | Initial version |
+| 1.1.0   | Multi-framework and Github actions support  |
